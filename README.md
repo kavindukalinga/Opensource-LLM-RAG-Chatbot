@@ -14,6 +14,9 @@
   - [Content](#content)
   - [Ollama](#ollama)
   - [Ollama models](#ollama-models)
+    - [Llama3](#llama3)
+    - [mxbai-embed-large](#mxbai-embed-large)
+    - [nomic-embed-text](#nomic-embed-text)
   - [Contributors](#contributors)
 
 ## Ollama
@@ -70,6 +73,22 @@ curl -X POST http://localhost:11434/api/generate -d '{
   "prompt":"Why is the sky blue?"
  }'
 ```
+
+### Llama3
+
+### mxbai-embed-large
+
+As of March 2024, this model archives SOTA performance for Bert-large sized models on the MTEB. It outperforms commercial models like OpenAIs `text-embedding-3-large` model and matches the performance of model 20x its size.
+
+`mxbai-embed-large` was trained with no overlap of the MTEB data, which indicates that the model generalizes well across several domains, tasks and text length.
+
+Source: <https://ollama.com/library/mxbai-embed-large>
+
+### nomic-embed-text
+
+`nomic-embed-text` is a large context length text encoder that surpasses OpenAI `text-embedding-ada-002` and `text-embedding-3-small` performance on short and long context tasks.
+
+Source: <https://ollama.com/library/mxbai-embed-large>
 
 ## Contributors
 
