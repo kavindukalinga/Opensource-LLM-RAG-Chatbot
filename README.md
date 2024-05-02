@@ -74,6 +74,13 @@ curl -X POST http://localhost:11434/api/generate -d '{
  }'
 ```
 
+```bash
+# Run On Terminal
+ollama run llama3:latest
+>>> Send a message (/? for help)
+>>> /bye
+```
+
 ### Llama3
 
 ### mxbai-embed-large
