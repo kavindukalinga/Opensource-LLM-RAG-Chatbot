@@ -40,17 +40,6 @@ def get_embedding_function():
 #         api_key=inference_api_key, model_name="sentence-transformers/all-MiniLM-l6-v2"
 #     )
 #     return embeddings
-
-#----------------------------------------------------------------------------------------------------------------------
-# def get_embedding_function():
-#     embeddings = BedrockEmbedd
-# inference_api_key='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'ings(
-#         credentials_profile_name="default", region_name="us-east-1"
-#     )
-#     # embeddings = OllamaEmbeddings(model="nomic-embed-text")
-#     return embeddings
-
-
 #----------------------------------------------------------------------------------------------------------------------
 if __name__ == "__main__":
     embeddings=get_embedding_function()
