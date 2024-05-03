@@ -7,6 +7,7 @@
 - Models used: `llama3:latest`, `nomic-embed-text:latest`, `mxbai-embed-large:latest`
 - Languages: `python3`
 - Packages and APIs: `crewai`,`faiss-cpu`, `langchain`, `chromadb`, `pypdf`, `pytest`
+  <!-- https://www.youtube.com/watch?v=2TJxpyO3ei4 -->
 
 ## Content
 
@@ -17,6 +18,9 @@
     - [Llama3](#llama3)
     - [mxbai-embed-large](#mxbai-embed-large)
     - [nomic-embed-text](#nomic-embed-text)
+  - [HuggingFace](#huggingface)
+    - [sentence-transformers/all-MiniLM-l6-v2](#sentence-transformersall-minilm-l6-v2)
+    - [Salesforce/SFR-Embedding-Mistral](#salesforcesfr-embedding-mistral)
   - [Contributors](#contributors)
 
 ## Ollama
@@ -51,6 +55,8 @@ curl -fsSL https://ollama.com/install.sh | sh
 ```
 
 ## Ollama models
+
+Check Ollama models here: <https://ollama.com/library>
 
 ```bash
 ollama pull llama3:latest
@@ -96,6 +102,16 @@ Source: <https://ollama.com/library/mxbai-embed-large>
 `nomic-embed-text` is a large context length text encoder that surpasses OpenAI `text-embedding-ada-002` and `text-embedding-3-small` performance on short and long context tasks.
 
 Source: <https://ollama.com/library/mxbai-embed-large>
+
+## HuggingFace
+
+Compare HuggingFace models here : <https://huggingface.co/spaces/mteb/leaderboard>
+
+### sentence-transformers/all-MiniLM-l6-v2
+
+### Salesforce/SFR-Embedding-Mistral
+
+The Best for `Retrieval Average (15 datasets)`
 
 ## Contributors
 
