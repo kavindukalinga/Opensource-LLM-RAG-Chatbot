@@ -6,10 +6,12 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain.schema.document import Document
 from get_embedding_function import get_embedding_function
 from langchain.vectorstores.chroma import Chroma
+from typing import List
 
 
-CHROMA_PATH = '/home/kkalinga/Documents/ISA intern/rag-search/Opensource-LLM-RAG-Chatbot/chroma/huggingface'
-DATA_PATH = "/home/kkalinga/Documents/ISA intern/rag-search/Opensource-LLM-RAG-Chatbot/Data"
+
+CHROMA_PATH = '../chroma/huggingface'
+DATA_PATH = "../Data"
 
 
 def main():
@@ -33,7 +35,8 @@ def load_documents():
     return document_loader.load()
 
 
-def split_documents(documents: list[Document]):
+# def split_documents(documents: list[Document]):
+def split_documents(documents: List[Document]):
     text_splitter = RecursiveCharacterTextSplitter(
         chunk_size=800,
         chunk_overlap=80,
@@ -43,7 +46,7 @@ def split_documents(documents: list[Document]):
     return text_splitter.split_documents(documents)
 
 
-def add_to_chroma(chunks: list[Document]):
+def add_to_chroma(chunks: List[Document]):
     # Load the existing database.
     db = Chroma(
         persist_directory=CHROMA_PATH, embedding_function=get_embedding_function()

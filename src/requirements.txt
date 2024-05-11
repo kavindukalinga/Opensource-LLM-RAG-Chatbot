@@ -2,3 +2,5 @@ pypdf
 langchain
 chromadb # Vector storage
 pytest
+flask
+sentence-transformers

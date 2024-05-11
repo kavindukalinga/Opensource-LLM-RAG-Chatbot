@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AVEN Confluence Bot</title>
+    <style>
+      body {
+        text-align: center;
+      }
+      form {
+        display: inline-block;
+        text-align: left;
+        margin-top: 50px;
+      }
+      input[type="text1"] {
+        width: 400px; /* Adjust width as needed */
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+      }
+      input[type="text2"] {
+        width: 400px; /* Adjust width as needed */
+        height: 40px;
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+      }
+      input[type="submit"],
+      input[type="button"] {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      input[type="submit"]:hover,
+      input[type="button"]:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>AVEN Confluence Bot</h1>
+    <form action="/process" method="post">
+      <label for="question">Question:</label><br />
+      <input
+        type="text1"
+        id="question"
+        name="question"
+        value="{{ question }}"
+      /><br />
+      <label for="answer">Answer:</label><br />
+      <textarea
+        type="text2"
+        id="answer"
+        name="answer"
+        readonly
+        rows="10"
+        cols="50"
+      >
+{{ answer }}</textarea
+      ><br />
+      <input type="submit" value="Send" />
+      <input type="button" value="Reset" onclick="resetFields()" />
+    </form>
+
+    <script>
+      function resetFields() {
+        document.getElementById("question").value = "";
+        document.getElementById("answer").value = "";
+      }
+    </script>
+  </body>
+</html>

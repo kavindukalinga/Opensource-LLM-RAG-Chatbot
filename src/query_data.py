@@ -1,11 +1,12 @@
 import argparse
+import requests
 from langchain.vectorstores.chroma import Chroma
 from langchain.prompts import ChatPromptTemplate
 from langchain_community.llms.ollama import Ollama
 
 from get_embedding_function import get_embedding_function
 
-CHROMA_PATH = '/home/kkalinga/Documents/ISA intern/rag-search/Opensource-LLM-RAG-Chatbot/chroma/mxbai'
+CHROMA_PATH = '../chroma/huggingface'
 
 PROMPT_TEMPLATE = """
 Answer the question based only on the following context:
@@ -40,13 +41,36 @@ def query_rag(query_text: str):
     prompt = prompt_template.format(context=context_text, question=query_text)
     print(prompt)
 
-    model = Ollama(model="llama3:latest")
-    response_text = model.invoke(prompt)
+    # url = "http://8888888888888/v1/models/llama3"
 
-    sources = [doc.metadata.get("id", None) for doc, _score in results]
-    formatted_response = f"Response: {response_text}\nSources: {sources}"
-    print(formatted_response)
-    return response_text
+    # payload = {
+    #     "context": context_text,
+    #     "prompt": query_text
+    # }
+
+    # headers = {
+    #     "cache-control": "no-cache",
+    #     "content-type": "application/json",
+    #     "postman-token": "1a5b79ea-0fb3-b67d-d330-b6bb255a74f9"
+    # }
+
+    # print("Sending request to Llama...")
+    try:
+        # response = requests.post(url, json=payload, headers=headers)
+
+        # response_text = response.text
+        model = Ollama(model="llama3:latest")
+        response_text = model.invoke(prompt)
+
+        sources = [doc.metadata.get("id", None) for doc, _score in results]
+        formatted_response = f"Response: {response_text}\nSources: {sources}"
+        print(formatted_response)
+        # print(response_text)
+        # print("Source:\n",sources)
+    except Exception as e:
+        formatted_response = f"Error: {e}"
+        print(formatted_response)
+    return formatted_response
 
 
 if __name__ == "__main__":

@@ -1,0 +1,7 @@
+__pycache__/
+.env
+.results
+__pycache__/
+README.md
+test_rag.py
+test.ipynb
